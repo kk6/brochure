@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
@@ -118,4 +119,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+TWITTER_CONSUMER_KEY = os.environ['CONSUMER_KEY']
+TWITTER_CONSUMER_SECRET = os.environ['CONSUMER_SECRET']
 TWITTER_CALLBACK_URL = 'http://127.0.0.1:8000/callback/'
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
+SESSION_COOKIE_HTTPONLY = True
