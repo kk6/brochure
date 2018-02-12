@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'brochure.middleware.TwitterMiddleware',
 ]
 
 ROOT_URLCONF = 'brochure.urls'
@@ -126,3 +127,5 @@ TWITTER_CALLBACK_URL = 'http://127.0.0.1:8000/callback/'
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
 SESSION_COOKIE_HTTPONLY = True
+
+LOGOUT_REDIRECT_URL = '/'

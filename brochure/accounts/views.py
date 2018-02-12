@@ -34,10 +34,5 @@ def callback(request):
 
 
 def dashboard(request):
-    token_data = request.session['access_token_data']
-    auth = tweepy.OAuthHandler(settings.TWITTER_CONSUMER_KEY,
-                               settings.TWITTER_CONSUMER_SECRET)
-    auth.set_access_token(token_data['access_token'], token_data['access_token_secret'])
-    api = tweepy.API(auth)
-    user = api.me()
+    user = request.twitter_api.me()
     return render(request, 'dashboard.html', context={'user': user})
