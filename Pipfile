@@ -13,3 +13,4 @@ tweepy = "*"
 
 [dev-packages]
 
+pytest-django = "*"
